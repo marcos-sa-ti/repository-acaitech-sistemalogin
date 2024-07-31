@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 #Criando uma funcao
 def index(request):
-    #Primeiro parametro sempre e a requisicao
+    #Primeiro parametro sempre é a requisicao
     return render (request, 'home.html')
 
 def exibirTelaCadastroFuncionario(request):
@@ -14,3 +14,6 @@ def exibirTelaCadastroFuncionario(request):
 
 def exibirTelaImagem(request):
     return render(request, 'imagem.html')
+
+def exibirTelaLoginAcaiTech(request):
+    return render(request, 'login.html')

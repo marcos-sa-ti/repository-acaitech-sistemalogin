@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Açai Tech | Login</title>
+    <meta charset="utf-8">
+    <!-- Importacao de biblioteca do bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Deixar a pagina responsiva -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Importacao do meu arquivo de estilos-->
+    <link rel="stylesheet" href="{% static '/styles/login_acaitech.css' %}"> 
+
+    <script>
+    function validaFormularioLogin() {
+        let x = document.forms["formularioLogin"]["campousuario"].value;
+        if (x == "") {
+            <div class="alert alert-danger" role="alert">
+                alert("Preencher o usuário");
+            </div>
+          return false;
+        }
+      }
+    </script>
+</head>
+  <body>
+    
+
+    <div style="border-style: solid; border-color: blueviolet;background-color: beige; height: 100px; ">
+        <img src="{% static '/assets/logo/logoacaitech.png' %}" alt="Logo da empresa">
+    </div>
+    <br>
+    <br>
+
+        <form name="formularioLogin" onsubmit="return validaFormularioLogin()" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <label>Usuário</label>
+            <br>
+            <input id="campousuario" type="text" placeholder="Escreva seu usuário" required>
+            <br>
+            <label>Senha</label>
+            <br>
+            <input id="camposenha" type="password" placeholder="Escreva sua senha">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary btn-sm"> LOGIN </button>
+
+        </form>
+        
+    <div>
+        <p>Este ambiente é monitorado e restrito a pessoas autorizadas.</p>
+    </div>
+   
+
+    <!-- Inicio do footer-->
+    <footer style="background-color: blueviolet; position: fixed; width: 100%; bottom: 0; height: 50px;">
+       <p style="color: white; font-size: 12px;"> Desenvolvido por: MSB Soluções em Tecnologia da Informação | 2024</p>
+    </footer>
+    <!-- Inicio do footer-->
+  </body>
+</html>
